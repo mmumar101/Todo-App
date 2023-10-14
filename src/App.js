@@ -4,6 +4,8 @@ import Form from './components/form';
 import FilterSection from './components/filtersection';
 import Item from './components/items';
 import {BsMoonFill} from 'react-icons/bs';
+import { BsSun } from 'react-icons/bs';
+import { GetThemeValue } from './components/contextTheme';
 
 function App() {
 const [todos, setTodos] = useState([]);
@@ -91,7 +93,7 @@ function addTodo (text) {
 //######################################################################################################
 
   return (
-      <div className='min-h-screen pb-20 bg-[#F2F2F2] text-white '>
+      <div className='min-h-screen pb-20 bg-[#f2f2f2] text-white '>
       <div className=' bg-[#4d53c5] bg-no-repeat bg-cover h-52 px-5 py-8 '>
         <div className='flex justify-between items-center lg:w-[50%] lg:mx-auto mt-5'>
             <p className='text-3xl font-semibold tracking-[6px]'>TODO</p>
@@ -107,7 +109,7 @@ function addTodo (text) {
       </div>
       
       {/* Display items section */}
-      <div className='bg-white h-60 mx-5 rounded-md w-[5/6] relative -top-8 md:w-[48.5%] md:mx-auto lg:w-[48.5%] lg:mx-auto'>
+      <div className='bg-white mx-5 rounded-md w-[5/6] relative -top-8 sm:w-[60%] md:w-[48.5%] sm:mx-auto md:mx-auto lg:w-[48.5%] lg:mx-auto'>
       <FilterSection filterType = {setFilterValue} />
        {renderTodos() }
     

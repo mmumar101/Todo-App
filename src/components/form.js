@@ -12,7 +12,7 @@ export const Form = ({addHandler}) => {
   }
 
   return (
-    <div className='bg-white py-2 px-3 rounded-md md:w-[50%] md:mx-auto lg:w-[50%] lg:mx-auto'>
+    <div className='bg-white py-2 px-3 rounded-md sm:w-[64.7%] md:w-[50%] sm:mx-auto md:mx-auto lg:w-[50%] lg:mx-auto'>
         <form onSubmit={handleSubmit} className= 'flex items-center'>
             <div className='w-full lg:mx-auto border-none'>
                 <input type='text' onChange={(e) => setUserInput (e.target.value)} value={userInput} placeholder='Create new ToDo item' className='border-0 focus:outline-none text-gray-900 text-sm px-3 py-1 w-full'/>

@@ -4,8 +4,8 @@ import Form from './components/form';
 import FilterSection from './components/filtersection';
 import Item from './components/items';
 import {BsMoonFill} from 'react-icons/bs';
-import { BsSun } from 'react-icons/bs';
-import { GetThemeValue } from './components/contextTheme';
+// import { BsSun } from 'react-icons/bs';
+// import { GetThemeValue } from './components/contextTheme';
 
 function App() {
 const [todos, setTodos] = useState([]);
@@ -94,7 +94,7 @@ function addTodo (text) {
 
   return (
       <div className='min-h-screen pb-20 bg-[#f2f2f2] text-white '>
-      <div className=' bg-[#4d53c5] bg-no-repeat bg-cover h-52 px-5 py-8 '>
+      <div className=' bg-desktop_image bg-no-repeat bg-cover h-52 px-5 py-8 '>
         <div className='flex justify-between items-center lg:w-[50%] lg:mx-auto mt-5'>
             <p className='text-3xl font-semibold tracking-[6px]'>TODO</p>
             <button onClick={toggleTheme}>

@@ -1,29 +1,30 @@
-import React, { useEffect, useState} from 'react'
+import React, {useState} from 'react'
 import './index.css';
 import Form from './components/form';
 import FilterSection from './components/filtersection';
 import Item from './components/items';
 import {BsMoonFill} from 'react-icons/bs';
-// import { BsSun } from 'react-icons/bs';
-// import { GetThemeValue } from './components/contextTheme';
+import { BsSun } from 'react-icons/bs';
+import { GetThemeValue } from './components/contextTheme';
 
-function App() {
+export function App() {
 const [todos, setTodos] = useState([]);
 const [filter, setFilter] = useState('all');
-const [theme, setTheme] = useState ('light');
+const {darkTheme, themeHandler} = GetThemeValue();
+// const [theme, setTheme] = useState ('light');
 
 
 //FUNCTION TO TOGGLE DARK MODE
-function toggleTheme (){
-  if(theme === 'light'){
-    return 'dark'
-  } else {
-    setTheme('light')
-  }
-};
-useEffect(() => {
-  document.body.className = theme;
-}, [theme]);
+// function toggleTheme (){
+//   if(theme === 'light'){
+//     return 'dark'
+//   } else {
+//     setTheme('light')
+//   }
+// };
+// useEffect(() => {
+//   document.body.className = theme;
+// }, [theme]);
 
 
 
@@ -93,12 +94,12 @@ function addTodo (text) {
 //######################################################################################################
 
   return (
-      <div className='min-h-screen pb-20 bg-[#f2f2f2] text-white '>
+      <div className={`${darkTheme ? 'bg-slate-900' : 'bg-[#F2F2F2]'} min-h-screen pb-20  text-white`} >
       <div className=' bg-desktop_image bg-no-repeat bg-cover h-52 px-5 py-8 '>
         <div className='flex justify-between items-center lg:w-[50%] lg:mx-auto mt-5'>
             <p className='text-3xl font-semibold tracking-[6px]'>TODO</p>
-            <button onClick={toggleTheme}>
-            <BsMoonFill />
+            <button onClick={themeHandler}>
+           {darkTheme ? <BsSun /> : <BsMoonFill />} 
             </button>
 
         </div>
@@ -109,13 +110,13 @@ function addTodo (text) {
       </div>
       
       {/* Display items section */}
-      <div className='bg-white mx-5 rounded-md w-[5/6] relative -top-8 sm:w-[60%] md:w-[48.5%] sm:mx-auto md:mx-auto lg:w-[48.5%] lg:mx-auto'>
+      <div className={`${darkTheme ? 'bg-[#28273f]' : 'bg-white'} my mx-5 rounded-md w-[5/6] relative -top-8 sm:w-[60%] md:w-[48.5%] sm:mx-auto md:mx-auto lg:w-[48.5%] lg:mx-auto`}>
       <FilterSection filterType = {setFilterValue} />
        {renderTodos() }
     
       
-      <div className='flex justify-between items-center mx-5 h-16 text-[#494c6b]'>
-       <p className='text-[#494c6b]'>{getTodoCount()} items</p> 
+      <div className={`${darkTheme ? 'text-[#f2f2f2]' : ' text-gray-900'} flex justify-between items-center mx-5 h-16`}>
+       <p className={`${darkTheme ? 'text-[#f2f2f2]' : ' text-gray-900'}`}>{getTodoCount()} items</p> 
         <button type='button' onClick={clearCompletedTodos} className='focus:font-bold text-sm'>Clear Completed</button>
       </div>
       

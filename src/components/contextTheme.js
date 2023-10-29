@@ -1,22 +1,21 @@
-// import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState } from "react";
 
-// const themeContext = createContext();
+const ThemeContext = createContext();
 
-// export const contextTheme = ({children}) => {
-//     const [darkTheme, setDarkTheme] = useState(false);
+export const ContextTheme = ({children}) => {
+    const [darkTheme, setDarkTheme] = useState(false);
 
 
 
-// function themeHandler() {
-//     setDarkTheme((prev) => !prev);
-// }
+function themeHandler() {
+    setDarkTheme((prev) => !prev);
+}
 
-//   return (
-//     <themeContext.provider value={{darkTheme, themeHandler}}>
-//         {children}
-//     </themeContext.provider>
-//   );
-// };
+  return (
+    <ThemeContext.Provider value={{darkTheme, themeHandler}}>
+        {children}
+    </ThemeContext.Provider>
+  );
+};
 
-// export const GetThemeValue = () => useContext(themeContext);
-// bg-[#4d53c5]
+export const GetThemeValue = () => useContext(ThemeContext);

@@ -1,9 +1,11 @@
 import React from 'react';
 import {MdDeleteForever, MdCheck, MdCancel} from 'react-icons/md'
+import { GetThemeValue } from './contextTheme';
 
 export const Item = ({itemData, deleteItem, statusUpdate}) => {
+  const {darkTheme} = GetThemeValue();
   return (
-    <div className='text-[#494c6b] px-5 h-14 flex mx-5 justify-between border-b-[1px] border-[#d2d3de] items-center'> 
+    <div className={`${darkTheme ? 'text-[#f2f2f2]' : ' text-gray-900'} px-5 h-14 flex mx-5 justify-between border-b-[1px] border-[#d2d3de] items-center`}> 
         <div className='flex items-center'>
           {
           itemData.status ? (

@@ -94,8 +94,8 @@ function addTodo (text) {
 //######################################################################################################
 
   return (
-      <div className={`${darkTheme ? 'bg-slate-900' : 'bg-[#F2F2F2]'} min-h-screen pb-20  text-white`} >
-      <div className=' bg-desktop_image bg-no-repeat bg-cover h-52 px-5 py-8 '>
+      <div className={`${darkTheme ? 'bg-slate-900' : 'bg-[#F2F2F2]'} min-h-screen pb-20 text-white`} >
+      <div className=' bg-desktop_image bg-no-repeat bg-cover h-52 px-5 py-5 '>
         <div className='flex justify-between items-center lg:w-[50%] lg:mx-auto mt-5'>
             <p className='text-3xl font-semibold tracking-[6px]'>TODO</p>
             <button onClick={themeHandler}>
@@ -110,7 +110,7 @@ function addTodo (text) {
       </div>
       
       {/* Display items section */}
-      <div className={`${darkTheme ? 'bg-[#28273f]' : 'bg-white'} my mx-5 rounded-md w-[5/6] relative -top-8 sm:w-[60%] md:w-[48.5%] sm:mx-auto md:mx-auto lg:w-[48.5%] lg:mx-auto`}>
+      <div className={`${darkTheme ? 'bg-[#28273f]' : 'bg-white'} my-6 mx-5  rounded-md w-[5/6] relative -top-12 sm:w-[60%] md:w-[48.5%] sm:mx-auto md:mx-auto lg:w-[48.5%] lg:mx-auto`}>
       <FilterSection filterType = {setFilterValue} />
        {renderTodos() }
     
